@@ -28,19 +28,19 @@ function updateMessagerie(message) {
         if (message["messages"][index]["important"]) {
             let text = message["messages"][index]["text"];
             document.getElementById('important-message').innerHTML += text + '<br>';
-            if (text.startsWith("Code anti-poison") || text.startsWith("Nouveau code")) {
-                let code = text.match(/\d+/g);
-                for (const v of code) {
-                    if (!codeDejaEnvoyer.includes(v)) {
-                        let m = {
-                            'message': v
-                        }
-                        codeDejaEnvoyer.push(v);
-                        console.log(m);
-                        sendMessage(m);
-                    }
-                }
-            }
+            // if (text.startsWith("Code anti-poison") || text.startsWith("Nouveau code")) {
+            //     let code = text.match(/\d+/g);
+            //     for (const v of code) {
+            //         if (!codeDejaEnvoyer.includes(v)) {
+            //             let m = {
+            //                 'message': v
+            //             }
+            //             codeDejaEnvoyer.push(v);
+            //             console.log(m);
+            //             sendMessage(m);
+            //         }
+            //     }
+            // }
 
 
         }
@@ -77,7 +77,7 @@ function innitMap(map) {
     const ctx = canvas.getContext('2d');
     const tileSize = 16
     const tileset = new Image();
-    tileset.src = '../ressources/tileset.png';
+    tileset.src = 'ressources/tileset.png';
 
     canvas.width = map["layers"][0]["view"].length * tileSize
     canvas.height = map["layers"][0]["view"].length * tileSize
@@ -114,9 +114,9 @@ function innitMap(map) {
 }
 
 function updateMap() {
-    console.log('update');
     fetchData().then(data => {
         if (data) {
+            console.log(data);
             innitMap(data);
             updateMessagerie(data["player"])
         } else {

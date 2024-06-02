@@ -33,10 +33,6 @@
     {
       "name": "Front",
       "view": []
-    },
-    {
-      "name": "Items",
-      "view": []
     }
   ],
   "player": {},

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas avec Tileset</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+    <script src="src/script/script.js"></script>
+    <script src="src/script/move.js"></script>
+<!--    <script src="script/websocket.js"></script>-->
+</head>
+<body>
+
+
+<main>
+    <div id="form-container">
+        <h2>Enter Player Information</h2>
+        <form id="player-form">
+            <label for="playerName">Player Name:</label>
+            <input type="text" id="playerName" name="playerName" required>
+            <br>
+            <label for="playerNumber">Player Number:</label>
+            <input type="number" id="playerNumber" name="playerNumber" required>
+            <br>
+            <label for="teamPassword">Team Password:</label>
+            <input type="text" id="teamPassword" name="teamPassword" required>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="game" style="margin-top: 10px">
+        <canvas id="myCanvas" width="" height=""></canvas>
+    </div>
+    <div id="messages" style="border: black solid 1px">
+        <h2>Messagerie</h2>
+        <h4>important</h4>
+        <p id="important-message" style="max-height: 200px; overflow-y: auto"></p>
+        <h4>general</h4>
+        <p id="general-message" style="max-height: 200px; overflow-y: auto"></p>
+    </div>
+    <form id="message-form">
+        <label for="message">Enter message:</label>
+        <input type="text" id="message" name="message" required>
+        <button type="submit">Submit</button>
+    </form>
+</main>
+
+</body>
+</html>
